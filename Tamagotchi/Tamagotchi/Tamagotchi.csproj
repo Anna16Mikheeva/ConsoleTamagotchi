@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tamagotchi.cs" />
     <Compile Include="TamagotchiActions.cs" />
+    <Compile Include="TamagotchiCondition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
