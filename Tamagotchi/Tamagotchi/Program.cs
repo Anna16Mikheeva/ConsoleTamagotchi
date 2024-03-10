@@ -14,7 +14,7 @@ namespace Tamagotchi
             TamagotchiCondition tamagotchiCondition = new TamagotchiCondition();
             // Создание экземпляра класса Tamagotchi.
             Tamagotchi tamagotchi = new Tamagotchi();
-            tamagotchiCondition.PrintInformationPet(tamagotchi);
+            tamagotchiCondition.PrintPetInformation(tamagotchi);
         }
     }
 }
