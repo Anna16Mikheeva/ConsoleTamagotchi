@@ -37,7 +37,7 @@ namespace Tamagotchi
         {
             tamagotchi.Fatigue = 0;
             tamagotchi.Health = tamagotchi.Health + 1;
-            tamagotchi.Hungry = tamagotchi.Hungry - 1;
+            tamagotchi.Hungry = tamagotchi.Hungry + 1;
         }
 
         /// <summary>
