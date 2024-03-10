@@ -36,7 +36,7 @@ namespace Tamagotchi
         /// <summary>
         /// Функция снижения состояния питомца со временем.
         /// </summary>
-        /// <param name="tamagotchi"></param>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void DowngradeState(Tamagotchi tamagotchi)
         {
             // Бесконечный цикл.
@@ -44,16 +44,11 @@ namespace Tamagotchi
             {
                 // Пауза минута.
                 Thread.Sleep(60000);
-
                 StartGame();
-
                 // Вывод имени питомца.
                 Console.WriteLine(tamagotchi.Name);
-
                 GetSick(tamagotchi);
-
                 _tamagotchiActions.IncreaseState(tamagotchi);
-
                 DisplayStateMenu(tamagotchi);
             }
         }
@@ -61,17 +56,18 @@ namespace Tamagotchi
         /// <summary>
         /// Вывод информации о питомце и меню.
         /// </summary>
-        /// <param name="tamagotchi"></param>
-        public void PrintInformationPet(Tamagotchi tamagotchi)
+        /// <param name="tamagotchi">Тамагочи</param>
+        public void PrintPetInformation(Tamagotchi tamagotchi)
         {
             StartGame();
 
             if (tamagotchi.Name.Length == 0)
             {
                 tamagotchi.Name = Console.ReadLine();
+
                 while (tamagotchi.Name.Length == 0)
                 {
-                    PrintInformationPet(tamagotchi);
+                    PrintPetInformation(tamagotchi);
                 }
 
                 // Создание экземпляра класса Thread и указание метода,
@@ -87,16 +83,15 @@ namespace Tamagotchi
             }
 
             GetSick(tamagotchi);
-
             DisplayStateMenu(tamagotchi);
-
             EnterActionNumber(tamagotchi);
         }
 
-        // Вывод типа питомца и предложения ввести имя.
+        /// <summary>
+        /// Вывод типа питомца и предложения ввести имя.
+        /// </summary>
         public void StartGame()
         {
-            // Очищение консоли.
             Console.Clear();
             // Вывод типа питомца.
             Console.WriteLine("###########################################################\n" +
@@ -106,7 +101,10 @@ namespace Tamagotchi
             Console.WriteLine("Pet's name: ");
         }
 
-        // Вывод, что питомец болен.
+        /// <summary>
+        /// Вывод, что питомец болен.
+        /// </summary>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void GetSick(Tamagotchi tamagotchi)
         {
             // Условие, что состояние здоровья равно 0.
@@ -117,7 +115,10 @@ namespace Tamagotchi
             }
         }
 
-        // Вывод состояния и меню.
+        /// <summary>
+        /// Вывод состояния и меню.
+        /// </summary>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void DisplayStateMenu(Tamagotchi tamagotchi)
         {
             Console.WriteLine("\nHealth  " + _statePet[tamagotchi.Health]);
@@ -136,7 +137,7 @@ namespace Tamagotchi
         /// <summary>
         /// Просит ввести номер действия из меню.
         /// </summary>
-        /// <param name="tamagotchi"></param>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void EnterActionNumber(Tamagotchi tamagotchi)
         {
             // Ввод номера действия.
@@ -169,48 +170,45 @@ namespace Tamagotchi
         /// <summary>
         /// Покормить питомца.
         /// </summary>
-        /// <param name="tamagotchi"></param>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void Feed(Tamagotchi tamagotchi)
         {
             _tamagotchiActions.Feed(tamagotchi);
-            // Очистить консоль.
             Console.Clear();
-            PrintInformationPet(tamagotchi);
+            PrintPetInformation(tamagotchi);
         }
 
         /// <summary>
         /// Поиграть с питомцем.
         /// </summary>
-        /// <param name="tamagotchi"></param>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void Play(Tamagotchi tamagotchi)
         {
             _tamagotchiActions.Play(tamagotchi);
-            // Очистить консоль.
             Console.Clear();
-            PrintInformationPet(tamagotchi);
+            PrintPetInformation(tamagotchi);
         }
 
         /// <summary>
         /// Укачать питомца.
         /// </summary>
-        /// <param name="tamagotchi"></param>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void Sleep(Tamagotchi tamagotchi)
         {
             _tamagotchiActions.Sleep(tamagotchi);
-            // Очистить консоль.
             Console.Clear();
-            PrintInformationPet(tamagotchi);
+            PrintPetInformation(tamagotchi);
         }
 
         /// <summary>
         /// Лечить питомца.
         /// </summary>
-        /// <param name="tamagotchi"></param>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void Treat(Tamagotchi tamagotchi)
         {
             _tamagotchiActions.Treat(tamagotchi);
             Console.Clear();
-            PrintInformationPet(tamagotchi);
+            PrintPetInformation(tamagotchi);
         }
     }
 }

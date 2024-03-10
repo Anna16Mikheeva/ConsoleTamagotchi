@@ -9,7 +9,7 @@ namespace Tamagotchi
         /// <summary>
         /// Покормить питомца.
         /// </summary>
-        /// <param name="tamagotchi"></param>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void Feed(Tamagotchi tamagotchi)
         {
             tamagotchi.Hungry = tamagotchi.Hungry - 2;
@@ -18,7 +18,7 @@ namespace Tamagotchi
         /// <summary>
         /// Поиграть с питомцем.
         /// </summary>
-        /// <param name="tamagotchi"></param>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void Play(Tamagotchi tamagotchi)
         {
             tamagotchi.Fatigue = tamagotchi.Fatigue + 1;
@@ -27,7 +27,7 @@ namespace Tamagotchi
         /// <summary>
         /// Укачать питомца. 
         /// </summary>
-        /// <param name="tamagotchi"></param>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void Sleep(Tamagotchi tamagotchi)
         {
             tamagotchi.Fatigue = 0;
@@ -38,7 +38,7 @@ namespace Tamagotchi
         /// <summary>
         /// Увеличение состояний голода и усталости.
         /// </summary>
-        /// <param name="tamagotchi"></param>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void IncreaseState(Tamagotchi tamagotchi)
         {
             tamagotchi.Fatigue = tamagotchi.Fatigue + 1;
@@ -48,7 +48,7 @@ namespace Tamagotchi
         /// <summary>
         /// Увеличение состояний здоровья.
         /// </summary>
-        /// <param name="tamagotchi"></param>
+        /// <param name="tamagotchi">Тамагочи</param>
         public void Treat(Tamagotchi tamagotchi)
         {
             tamagotchi.Health = 10;
